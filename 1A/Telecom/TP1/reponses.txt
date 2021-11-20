@@ -1,0 +1,18 @@
+Nom : Najmeddine
+Prenom : Ayoub
+Groupe : N
+
+
+
+1. On sait que η = Rb/B avec :
+Rb : est le débit binaire
+B : est la bande occupée par le signal.
+donc d'après les figures on a : η modulateur3 < η modulateur1 < η modulateur4 < η modulateur2
+
+2. Les éléments d’un modulateur bande de base qui agissent sur l’efficacité
+spectrale :
+L'augmentation de l’ordre de la modulation permet d’augmenter l’efficacité spectrale.
+Le choix du filtre de mise en forme bien localisé en fréquence, Ainsi le
+mapping et la réponse impulsionnelle agissent clairement sur l’efficacité
+spectrale.
+
