@@ -1,1 +1,1 @@
-# ENSEEIHT-Projects
+# Projects
