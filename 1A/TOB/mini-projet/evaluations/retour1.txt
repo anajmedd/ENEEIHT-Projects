@@ -1,0 +1,21 @@
+Réponses dans le LISEZ-MOI.txt :
+
+Indiquer la relation UML entre Cercle et le Point centre du cercle.
+-------------------------------------------------------------------
+
+Il ne s'agit pas d'une association (penser au cycle de vie des objets).
+
+
+Comment est réalisée l'exigence E18 ?
+-------------------------------------
+
+La réponse concernant E18 est incomplète et maladroite : on fait des copies pour getCentre() et pour le constructeur, mais translater ne fait pas lui-même une copie.
+
+
+Commentaires généraux :
+- il faudrait ajouter une description de classe ;
+- il y a des soucis d'indentation : tout ce qui est à l'intérieur de la classe devrait être indenté d'au moins un cran ;
+- il n'est pas utile (et un peu lourd visuellement) de transtyper pour le calcul des coordonnées milieu ((double) 2) ;
+- certaines variables intermédiaires ne sont pas utiles, par exemple dans getCentre(), tu pourrais directement faire return new Point(..) ;
+- il faudrait utiliser des commentaires javadoc plutôt que des commentaires classiques, notamment pour les attributs ;
+- voir les indications dans evaluation1.txt.
