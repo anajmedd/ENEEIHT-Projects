@@ -24,5 +24,6 @@ Then you can surf on the repository as you want.
 If you have any question, you can contact me on Gmail: ayoub.najmeddine@etu.inp-n7.fr
 
 ## License
-                The library is Open Source Software released under the [License](LICENSE.md).
+                
+The library is Open Source Software released under the [License](LICENSE.txt).
 
