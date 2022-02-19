@@ -1,7 +1,6 @@
-# Projects
-![enseeiht](https://user-images.githubusercontent.com/84988759/142729976-517f9914-5fdc-4ab7-8834-1f7adcce9869.png)
+<div class="logo"><img src="enseeiht.png" width="220px" align="right"></div>	
 
-# ENSEEIHT				
+# Projects
 
 ## Table of Contents
 
@@ -21,7 +20,7 @@ Then you can surf on the repository as you want.
 
 ## Questions?
 
-If you have any question, you can contact me on Gmail: ayoub.najmeddine@etu.inp-n7.fr
+If you have any question, you can contact me on email : ayoub.najmeddine@etu.inp-n7.fr
 
 ## License
 The library is Open Source Software released under the [License](LICENSE.md).
