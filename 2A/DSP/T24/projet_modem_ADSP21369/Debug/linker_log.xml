@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.0/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Mon May 06 08:38:58 2019
+'>
+<MSG id='037A8EA8' mid='li2153' type='Warning' suppressed=''>
+<TEXT><![CDATA[Input sections have inconsistent qualifiers as follows.
+DOUBLEANY | 369_hdr.doj(seg_rth)
+unknown   | .\Debug\gene_sinus_LUT.doj(seg_pmco)
+DOUBLE32  | .\Debug\init1835viaSPI.doj(seg_dmda)
+DOUBLE32  | .\Debug\init1835viaSPI.doj(seg_pmco)
+DOUBLE32  | .\Debug\initPLL_SDRAM.doj(seg_pmco)
+DOUBLE32  | .\Debug\initSPORT.doj(seg_dmda)
+DOUBLE32  | .\Debug\initSPORT.doj(seg_pmco)
+DOUBLE32  | .\Debug\initSRU.doj(seg_dmda)
+DOUBLE32  | .\Debug\initSRU.doj(seg_pmco)
+DOUBLE32  | .\Debug\IRQprocess.doj(seg_pmco)
+DOUBLE32  | .\Debug\main.doj(seg_dmda)
+DOUBLE32  | .\Debug\main.doj(seg_pmco)
+DOUBLE32  | .\Debug\main.doj(seg_pmda)
+unknown   | .\Debug\rx_tx_samples.doj(seg_dmda)
+unknown   | .\Debug\rx_tx_samples.doj(seg_pmco)
+DOUBLE32  | .\Debug\SPORTisr.doj(seg_dmda)
+DOUBLE32  | .\Debug\SPORTisr.doj(seg_pmco)
+DOUBLEANY | libc36x.dlb[argstring.doj](seg_dmda)
+DOUBLEANY | libc36x.dlb[argstring.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[divrem_s32.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[field_interrupt.doj](seg_rth)
+DOUBLEANY | libc36x.dlb[getargv.doj](seg_dmda)
+DOUBLEANY | libc36x.dlb[getargv.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[heap.doj](seg_init)
+DOUBLEANY | libc36x.dlb[inits.doj](seg_init)
+DOUBLEANY | libc36x.dlb[int_cnfl.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[int_cnsl.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[int_cnss.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[int_tabl.doj](seg_dmda)
+DOUBLEANY | libc36x.dlb[interrup.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[irptl.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[num_heaps.doj](seg_dmda)
+DOUBLEANY | libc36x.dlb[rtheap.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[set_args.doj](seg_dmda)
+DOUBLEANY | libc36x.dlb[set_args.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[set_c.doj](seg_ctdml)
+DOUBLEANY | libc36x.dlb[set_c.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[stkinvalid_sharc.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[sure_rti.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[int_cncbl.doj](seg_pmco)
+DOUBLEANY | libc36x.dlb[int_cntl.doj](seg_pmco)]]></TEXT>
+</MSG>
+</DOCUMENT>

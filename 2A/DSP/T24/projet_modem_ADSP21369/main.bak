@@ -1,0 +1,95 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//NAME:     main.c (Block-based Talkthrough)
+//
+////////////////////////////////////////////////////////////////////////////////////////
+#include "tt.h"
+#include "modem.h"
+#include <signal.h>
+#include <math.h>
+
+
+extern void init_gene_sinus_LUT(void);
+
+
+// DATA SECTION //////////////////////////////////
+float pm LUT_sinus [512] = {
+	#include "LUT_512.dat"
+	};
+
+float* pointer_LUT;
+float* pointer_LUT_sinf0;  // On utilise 4 pointeurs supplémentaires afin de ne pas mélanger les pointeurs.
+float* pointer_LUT_sinf1;
+float* pointer_LUT_cosf0;
+float* pointer_LUT_cosf1;
+int nb_sample_bit;
+int nb_bit;
+int masque_bit_data;
+int bit_data;
+
+
+
+// DATA TO SEND ///////////////////////////////////
+int data_ASCII= 0xFFFFFd55;	
+	
+	
+void main(void)
+{
+
+    //Initialize PLL to run at CCLK= 331.776 MHz & SDCLK= 165.888 MHz.
+    //SDRAM is setup for use, but cannot be accessed until MSEN bit is enabled
+    InitPLL_SDRAM();
+
+    // Need to initialize DAI because the sport signals need to be routed
+    InitSRU();
+
+    // This function will configure the codec on the kit
+    Init1835viaSPI();
+
+    interrupt (SIG_SP0,TalkThroughISR);
+    // Finally setup the sport to receive / transmit the data
+    InitSPORT();
+
+    
+	pointer_LUT=&LUT_sinus [0]; // init pointer
+	
+	
+// Pointeurs pour les 4 Branches du démodulateur
+	pointer_LUT_sinf0 = &LUT_sinus [0]; 	// init pointer
+	pointer_LUT_cosf0 = &LUT_sinus [128]; // init pointer. Le 128 vient du fait qu'il y ait 512 valeurs dans la LUT. Etant donné que l'on veut une phase de pi/2, cela correspond à un décalage de 1/4 soit 128 valeurs.
+	pointer_LUT_sinf1 = &LUT_sinus [0]; 	// init pointer
+	pointer_LUT_cosf1 = &LUT_sinus [128]; // init pointer
+	
+	init_gene_sinus_LUT();		// init i12 as LUT pointer
+	
+	while(1)
+	{
+		// MODULATEUR CFSK /////////////////////////
+	  nb_bit=0;
+	  masque_bit_data=0x800;	
+	  while(nb_bit < NB_BIT_PER_DATA)
+	  {
+	  	// EXTRACT BIT FROM DATA TO SEND: TEST IF =1 or 0
+	  	// FLAG BIT =1/0 FOR GENE_SINUS
+		if ((data_ASCII&masque_bit_data)!=0){
+			bit_data=1;
+		}
+		else
+		{
+			bit_data=0;
+		}
+		// SHIFT MASK FOR NEXT BIT UNTIL BIT AVAIBLE
+	  	masque_bit_data=masque_bit_data>>1;
+	  	nb_bit++;
+	  	
+	  	// SYNCHRO ON IT . DO UNTIL NB SAMPLE PER BIT WILL SEND
+		nb_sample_bit=0;
+		while(nb_sample_bit < SAMPLE_PER_BIT)
+		{
+			 //Clear the Processing Active Semaphore after processing is complete
+    		blockReady = 0;
+			while(blockReady);  // Wait for IT (f_sampling)
+			nb_sample_bit++;
+		}
+	  }
+	}   
+}
